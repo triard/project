@@ -63,12 +63,12 @@ label {
     border: 1px solid #b32929;
 }
 
-.container{
+.container {
     border-collapse: collapse;
 }
 
 .kotak-form {
-    
+
     background: rgb(255, 255, 255);
     /*meletakkan form ke tengah*/
     margin: 150px auto;
@@ -96,19 +96,20 @@ label {
     background-color: #f2f2f2;
 }
 
-.header{
+.header {
     margin-top: 0%;
     margin-bottom: 0%;
     height: 50px;
     width: 100%;
-    background-color:rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
     position: -webkit-sticky;
     position: fixed;
-   z-index: 999;
+    z-index: 999;
 
 }
-.header a{
-    margin:-55px 20px 0px 0px;
+
+.header a {
+    margin: -55px 20px 0px 0px;
     float: right;
     height: 20px;
     width: 80px;
@@ -119,12 +120,13 @@ label {
     border-radius: 5px;
     font-family: sans-serif;
 }
+
 .header a:hover {
     background-color: rgba(255, 255, 255, 0.3);
-    color:white;
+    color: white;
 }
 
-.header p{
+.header p {
     margin-top: -15px;
     color: #d3d1d1;
     width: 16%;
@@ -132,59 +134,62 @@ label {
     text-align: center;
     font-size: 25px;
     font-family: 'Pacifico',
-    cursive;
+        cursive;
 }
 
-.menu{
+.menu {
     height: 600px;
     width: 15%;
     background-color: rgb(0, 0, 0);
     float: left;
     margin-top: 3.5%;
     position: -webkit-sticky;
-     position: fixed;
-     
+    position: fixed;
+
 }
 
 .menu div {
     margin: 5px;
     font-size: 25px;
-     font-family: sans-serif; 
-     border-radius: 5px;
-     padding: 4px;
-    }
-.menu div:hover {
-    background-color: rgba(255, 255, 255,0.3);
-    
+    font-family: sans-serif;
+    border-radius: 5px;
+    padding: 4px;
 }
 
-.menu div a{
+.menu div:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+
+}
+
+.menu div a {
     text-decoration-line: none;
     color: #ffffff;
 }
-.menu div img{
+
+.menu div img {
     height: 20px;
     width: 20px;
 }
 
-.content{
+.content {
     height: 100%;
     width: 84%;
     float: right;
 }
-.content h3{
+
+.content h3 {
     font-size: 30px;
     font-family: 'Francois One',
-    sans-serif;
+        sans-serif;
 }
 
 
-table{
+table {
     height: 100%;
     width: 100%;
 }
 
-.kotak{
+.kotak {
     height: 70%;
     width: 50%;
     background-color: #f3eaea;
@@ -203,7 +208,7 @@ table{
     border-radius: 5px;
 }
 
-.kotak-user{
+.kotak-user {
     width: 100%;
     height: 350px;
     padding: 20px;
@@ -211,7 +216,8 @@ table{
     font-size: 30px;
 
 }
-.kotak-user a{
+
+.kotak-user a {
     text-decoration-line: none;
     width: 40px;
     height: 25px;
@@ -221,7 +227,8 @@ table{
     color: #ffffff;
     background-color: #312f2f;
 }
-.input-style{
+
+.input-style {
     height: 30px;
     width: 200px;
     background-color: rgba(187, 187, 187, 0.3);
@@ -232,12 +239,13 @@ table{
     font-size: 20px;
 }
 
-.button{
+.button {
     height: 10px;
     width: 20px;
 }
-.footer{
-    height:50px;
+
+.footer {
+    height: 50px;
     width: 100%;
     background-color: rgb(0, 0, 0);
     bottom: 0%;
@@ -250,21 +258,21 @@ table{
     color: white;
 }
 
-.button img{
-   height: 20px;
-   width: 20px;
+.button img {
+    height: 20px;
+    width: 20px;
 }
 
-.big-box{
+.big-box {
     height: 120px;
     width: 60%;
     margin: 20px 0px 0px 200px;
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-.box{
-    align:center;
-    font-size:30px;
+.box {
+    align: center;
+    font-size: 30px;
     height: 80px;
     width: 200px;
     display: inline-block;
