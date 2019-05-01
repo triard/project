@@ -1,0 +1,268 @@
+body {
+    margin: 0%;
+    font-family: sans-serif;
+    font-family: "Kreon", serif;
+}
+
+h1 {
+    text-align: center;
+    /*ketebalan font*/
+    font-weight: 300;
+}
+
+.tulisan_login {
+    text-align: center;
+    /*membuat semua huruf menjadi kapital*/
+    text-transform: uppercase;
+}
+
+.kotak_login {
+    width: 350px;
+    background: white;
+    /*meletakkan form ke tengah*/
+    margin: 80px auto;
+    padding: 30px 20px;
+    box-shadow: 0px 0px 100px 4px #d6d6d6;
+}
+
+label {
+    font-size: 11pt;
+}
+
+.form_login {
+    /*membuat lebar form penuh*/
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    font-size: 11pt;
+    margin-bottom: 20px;
+    background-color: #d3d1d1;
+}
+
+.tombol_login {
+    background: #2aa7e2;
+    color: white;
+    font-size: 11pt;
+    width: 100%;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+}
+
+.link {
+    color: #180404;
+    text-decoration: none;
+    font-size: 12pt;
+}
+
+.alert {
+    background: #e44e4e;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #b32929;
+}
+
+.container{
+    border-collapse: collapse;
+}
+
+.kotak-form {
+    
+    background: rgb(255, 255, 255);
+    /*meletakkan form ke tengah*/
+    margin: 150px auto;
+    padding: 30px 20px;
+    box-shadow: 0px 0px 100px 4px #ffffff;
+    color: #180404;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.kotak-form tr td {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    font-size: 20pt;
+    margin-bottom: 20px;
+    background-color: #d3d1d1;
+
+}
+
+.header{
+    margin-top: 0%;
+    margin-bottom: 0%;
+    height: 50px;
+    width: 100%;
+    background-color:rgb(0, 0, 0);
+    position: -webkit-sticky;
+    position: fixed;
+   z-index: 999;
+
+}
+.header a{
+    margin:-55px 20px 0px 0px;
+    float: right;
+    height: 20px;
+    width: 80px;
+    color: #000000;
+    background-color: rgb(187, 207, 8);
+    text-align: center;
+    text-decoration-line: none;
+    border-radius: 5px;
+    font-family: sans-serif;
+}
+.header a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    color:white;
+}
+
+.header p{
+    margin-top: -15px;
+    color: #d3d1d1;
+    width: 16%;
+    background-color: #b32929;
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Pacifico',
+    cursive;
+}
+
+.menu{
+    height: 600px;
+    width: 15%;
+    background-color: rgb(0, 0, 0);
+    float: left;
+    margin-top: 3.5%;
+    position: -webkit-sticky;
+     position: fixed;
+     
+}
+
+.menu div {
+    margin: 5px;
+    font-size: 25px;
+     font-family: sans-serif; 
+     border-radius: 5px;
+     padding: 4px;
+    }
+.menu div:hover {
+    background-color: rgba(255, 255, 255,0.3);
+    
+}
+
+.menu div a{
+    text-decoration-line: none;
+    color: #ffffff;
+}
+.menu div img{
+    height: 20px;
+    width: 20px;
+}
+
+.content{
+    height: 100%;
+    width: 84%;
+    float: right;
+}
+.content h3{
+    font-size: 30px;
+    font-family: 'Francois One',
+    sans-serif;
+}
+
+
+table{
+    height: 100%;
+    width: 100%;
+}
+
+.kotak{
+    height: 70%;
+    width: 50%;
+    background-color: #f3eaea;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    box-shadow: #b32929;
+}
+
+.kotak-judul {
+    background-color: #a7a7a7;
+    padding: 10px;
+    text-align: center;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+}
+
+.kotak-user{
+    width: 100%;
+    height: 350px;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+
+}
+.kotak-user a{
+    text-decoration-line: none;
+    width: 40px;
+    height: 25px;
+    padding: 3px;
+    border-radius: 5px;
+    font-size: 15px;
+    color: #ffffff;
+    background-color: #312f2f;
+}
+.input-style{
+    height: 30px;
+    width: 200px;
+    background-color: rgba(187, 187, 187, 0.3);
+    padding: 5px;
+    margin: 2px;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.button{
+    height: 10px;
+    width: 20px;
+}
+.footer{
+    height:50px;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    bottom: 0%;
+    position: absolute;
+    position: -webkit-sticky;
+    position: fixed;
+    text-align: center;
+    line-height: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+.button img{
+   height: 20px;
+   width: 20px;
+}
+
+.big-box{
+    height: 120px;
+    width: 60%;
+    margin: 20px 0px 0px 200px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.box{
+    align:center;
+    font-size:30px;
+    height: 80px;
+    width: 200px;
+    display: inline-block;
+    margin-left: 20px;
+    border-radius: 10px;
+    -webkit-box-shadow: 10px 0 7px #222;
+    -moz-box-shadow: 10px 0 7px #222;
+    box-shadow: 10px 0 7px #222;
+}
