@@ -1,9 +1,7 @@
 <?php
 include("../config/koneksi.php");
-
 // cek apakah tombol daftar sudah diklik atau blum?
 if(isset($_POST['daftar'])){
-
     // ambil data dari formulir
   $username = $_POST['username'];
   $nama_lengkap = $_POST['full_name'];
@@ -19,10 +17,10 @@ if(isset($_POST['daftar'])){
     // apakah query simpan berhasil?
     if( $query ) {
         // kalau berhasil alihkan ke halaman indek.php dengan status=sukses
-        header('Location: login.php?status=sukses');
+        header('Location: index.php?status=sukses');
     } else {
         // kalau gagal alihkan ke halaman indek.php dengan status=gagal
-        header('Location: login.php?status=gagal');
+        header('Location: index.php?status=gagal');
     }
 
   }else {

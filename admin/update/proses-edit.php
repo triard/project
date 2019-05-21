@@ -58,10 +58,10 @@ if(isset($_POST['simpan'])){
     $tgl_berangkat = $_POST['tgl_berangkat'];
     $tgl_tiba = $_POST['tgl_tiba'];
     $kelas = $_POST['kelas'];
-    $status = $_POST['status'];
+    $kursi = $_POST['kursi'];
 
     // buat query update
-    $sql = "UPDATE jadwal SET nama_kr='$nama_kr', asal='$asal', tujuan='$tujuan', tgl_berangkat='$tgl_berangkat', tgl_tiba='$tgl_tiba', kelas='$kelas', status='$status' WHERE id_jd=$id_jd";
+    $sql = "UPDATE jadwal SET nama_kr='$nama_kr', asal='$asal', tujuan='$tujuan', tgl_berangkat='$tgl_berangkat', tgl_tiba='$tgl_tiba', kelas='$kelas', kursi='$kursi' WHERE id_jd=$id_jd";
     $query = mysqli_query($db, $sql);
 
     // apakah query update berhasil?

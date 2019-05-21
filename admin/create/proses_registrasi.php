@@ -51,10 +51,11 @@ if(isset($_POST['add'])){
     $tgl_tiba = $_POST['tgl_tiba'];
     $kelas = $_POST['kelas'];
     $harga = $_POST['harga'];
-    $status = $_POST['status'];
+    $kursi = $_POST['kursi'];
 
     // buat query
-    $sql = "INSERT INTO jadwal (nama_kr, asal, tujuan, tgl_berangkat, tgl_tiba, kelas,harga, status) VALUE ('$nama_kr','$asal', '$tujuan', '$tgl_berangkat', '$tgl_tiba', '$kelas',$harga, '$status')";
+    $sql = "INSERT INTO jadwal (nama_kr, asal, tujuan, tgl_berangkat, tgl_tiba, kelas,harga,kursi) VALUE ('$nama_kr','$asal', '$tujuan', '$tgl_berangkat', '$tgl_tiba', '$kelas',$harga,$kursi)";
+    
     $query = mysqli_query($db, $sql);
 
     // apakah query simpan berhasil?

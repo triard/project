@@ -1,5 +1,9 @@
 <?php
     session_start();
-    session_destroy();
-    header("location:login.php");
+    if( session_destroy()){
+        echo "
+		<script>alert('anda harus login terlebih dahulu');
+		window.location='../login/index.php'
+        </script>";
+    };   
 ?>  
