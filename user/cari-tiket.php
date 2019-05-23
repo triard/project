@@ -123,17 +123,7 @@
                
     </div>
                    
-                    <table class="box-view">
-                        <tr>
-                            <th>Nama KA</th>
-                            <th>Asal <br> stasiun</th>
-                            <th>Tujuan <br> stasiun</th>
-                            <th>waktu <br> berangkat</th>
-                            <th>waktu <br> tiba</th>
-                            <th>harga</th>
-                            <th>Aksi</th>
-                        </tr>
-                        
+                    <table class="box-view"> 
                         <?php
                         if (isset($_POST['submit'])) {
                         $asal = $_POST['asal'];
@@ -145,15 +135,34 @@
                         if($cek>0){
                         while ($r = mysqli_fetch_array($sql)) {
                             ?>
+                         <tr>
+                            <th>Nama KA</th>
+                            <th>Asal <br> stasiun</th>
+                            <th>Tujuan <br> stasiun</th>
+                            <th>waktu <br> berangkat</th>
+                            <th>waktu <br> tiba</th>
+                            <th>harga</th>
+                            <th>Aksi</th>
+                        </tr>
                         <tr>
                             <td><?php echo $r['nama_kr']; ?>
                                (<?php echo $r['id_jd']; ?>)
                             <br><?php echo $r['kelas']; ?></td>
-                            <td><?php echo $r['asal']; ?></td>
-                            <td><?php echo $r['tujuan']; ?></td>
+                             <?php
+                             $query ="SELECT stasiun from stasiun where id_st=$asal";
+                             $result=mysqli_query($db,$query); 
+                             $rows=mysqli_fetch_array($result);
+                            ?>
+                            <td><?php echo $rows["stasiun"]; ?></td>
+                            <?php
+                             $query ="SELECT stasiun from stasiun where id_st=$tujuan";
+                             $result=mysqli_query($db,$query); 
+                             $rows=mysqli_fetch_array($result);
+                            ?>
+                            <td><?php echo $rows["stasiun"]; ?></td>
                             <td><?php echo $r['tgl_berangkat']; ?></td>
                             <td><?php echo $r['tgl_tiba']; ?></td>
-                            <td><?php echo 'Rp.' . $r['harga']; ?></td>
+                            <td><?php echo 'Rp. ' . $r['harga']; ?></td>
                             <?php
                                 echo "<td>";
                                 echo "<a name='a' id='pesan' href='./proses-cart.php?id_jd=" . $r['id_jd'] . "&&jml=".$_POST['penumpang']."'>pesan</a>";
@@ -161,28 +170,15 @@
                                 ?>
                         </tr>
                         <?php }
-                        }else{
+                        }
+                }else{
                     echo "
                      <p style='font-size:90px; text-align:center;'><i class='fas fa-exclamation-triangle    '></i></p> <br>
                      <p style='font-size:30px; text-align:center;'> <b>Trains Not Available</b><br>
                      There are no trains matching your search criteria. Please modify your search.</p>";
-                }
                 }?>
                 </table>
                 <br>
-    <div class="action">
-            <h2>Give it a try before you commit.</h2>
-            <p>You will get various attractive promos from our website. Just give us your email address, and
-                we'll send you the details:</p>
-            <form action="./validasi-email.php" method="POST">
-                <center><input type="email" name="email" placeholder="Enter your email address" required="required"/>
-            <button type="submit" name="email-home">Sign Up Now! <i class="fas fa-plane    "></i></button>
-            </center>
-            </form>
-        </div>
-
-        <!-- Footer
-================================================== -->
         <footer>
             <nav>
                 <ul>
@@ -193,8 +189,4 @@
             <p>&copy; 2019. lets.go. All Rights Reserved.</p>
         </footer>
 </body>
-<!-- <script>
-    alert("pesanan telah diproses silahkan untuk membayar)");
-    document.location = './index.php';
-</script> -->
 </html>

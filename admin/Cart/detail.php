@@ -94,9 +94,23 @@
                                 $q = mysqli_query($db, $s);
                                 while($cart = mysqli_fetch_array($q)){
                                 if($cart){
+
                                  echo "<tr class='kotak-form' style='text-align:center; height:60px;'>";
-                                echo "<td>" . $cart['asal'] . "</td>";
-                                echo "<td>" . $cart['tujuan'] . "</td>";
+                                
+                                $query ="SELECT stasiun from stasiun where id_st=$cart[2]";
+                                $result=mysqli_query($db,$query); 
+                                $rows=mysqli_fetch_array($result);
+                                ?>
+                                <td><?php echo $rows["stasiun"]; ?></td>
+                                <?php
+                                $query ="SELECT stasiun from stasiun where id_st=$cart[3]";
+                                $result=mysqli_query($db,$query); 
+                                $rows=mysqli_fetch_array($result);
+                                
+                                ?>
+                                <td><?php echo $rows["stasiun"]; ?></td>
+                                <?php
+                               
                                 echo "<td>" . $cart['tgl_berangkat'] . "</td>";
                                 echo "<td>" . $cart['tgl_tiba'] . "</td>";
                                 echo "<td>" . $cart['kelas'] . "</td>";

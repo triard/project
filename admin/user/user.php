@@ -106,7 +106,6 @@
                                 echo "<a class='button' href='../user/form-edit.php?id=" . $user['id'] . "'><img src='../../assets/icon/edit.png'></a> | ";
                                 echo "<a class='button' href='../delete/hapus.php?id=" . $user['id'] . "'><img src='../../assets/icon/delete.png'> </a>";
                                 echo "</td>";
-
                                 echo "</tr>";
                             }
                             ?>

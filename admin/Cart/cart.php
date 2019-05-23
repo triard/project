@@ -42,6 +42,7 @@
                 </td>
                 <td class="content">
                     <br><br>
+                    <h3><i class="fas fa-cart-arrow-down    "></i> Cart</h3>
                     <div>
                         <table class="kotak" style="width:80%; margin:100px;">
                             <thead>

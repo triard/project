@@ -42,6 +42,7 @@
             <td class="content">
                 <br><br><br>
                 <div>
+                <h3><i class="fas fa-percent    "></i> Promosi</h3>
                     <table class="kotak" style="width:95%; margin:30px;">
                         <thead>
                             <tr class="kotak-judul" style="height:60px;">
@@ -75,7 +76,7 @@
                         </tbody>
                         <br>
                     </table>
-                    <h3>Promosi</h3>
+                    
                 <div>
                     <form enctype="multipart/form-data" action="./proses.php" method="post">
                         <div class="kotak" style="margin-bottom:150px; height:450px; width:300px; margin-left:200px;">

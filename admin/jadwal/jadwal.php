@@ -54,7 +54,7 @@
             </td>
             <td class="content">
                 <br><br>
-                <h3>Jadwal Kereta</h3>
+                <h3><i class="fas fa-calendar-alt    "></i> Jadwal Kereta</h3>
                 <div>
                     <form action="../create/proses_registrasi.php" method="POST">
                         <div class="kotak" style="width:28%; float:right; height:740px; margin-top:-70px;">

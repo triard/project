@@ -46,11 +46,11 @@ require("../login/validasi.php");
                 </td>
 
                 <td class="content">
-                    <br><br><br>
+                    <br><br>
                     <h3>DASHBOARD</h3>
                     <div class="big-box">
                         <br>
-                        <div class="box" style="background-color: #00b0ff;">
+                        <div class="box" style="background-color: #ffc107;">
 
                             <center>Admin
                                 <br>
@@ -64,7 +64,7 @@ require("../login/validasi.php");
                             ?>
                             </center>
                         </div>
-                        <div class="box" style="background-color: #1de9b6;">
+                        <div class="box" style="background-color: #40c4ff;">
                             <center>User
                                 <br>
                                 <i class="fas fa-user    "></i>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -77,7 +77,7 @@ require("../login/validasi.php");
                             ?>
                             </center>
                         </div>
-                        <div class="box" style="background-color: #e8f5e9;">
+                        <div class="box" style="background-color: #26a69a;">
                             <center>Stasiun
                                 <br>
                                 <i class="fas fa-train    "></i>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -91,7 +91,8 @@ require("../login/validasi.php");
                             </center>
                         </div>
                         <br><br><br>
-                        <div class="box" style="background-color: #cddc39">
+                        <center>
+                        <div class="box" style="background-color:#d32f2f;">
                             <center>Schedule
                                 <br>
                                 <i class="fas fa-calendar-alt    "></i>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -104,14 +105,15 @@ require("../login/validasi.php");
                             ?>
                             </center>
                         </div>
+                        </center>
                         <hr>
-                        <div class="progress-bar blue stripes" style="background-color: #4dd0e1;">
+                        <div class="progress-bar blue stripes" style="background-color: #00e676;">
                             <?php
                             $sql = "SELECT  count(status) as jumlah FROM headtransaksi where status='Complet'";
                             $query = mysqli_query($db, $sql);
                             $row = mysqli_fetch_array($query);
                             ?>
-                            <span style="width: 100%">Status Complet : <?php echo $row['jumlah']; ?></span>
+                            <span style="width: 100%"><i class="fas fa-check-square    "></i> Status Complet : <?php echo $row['jumlah']; ?></span>
                         </div>
                         <div class="progress-bar blue stripes" style="background-color: #ffd54f;">
                             <?php
@@ -120,7 +122,7 @@ require("../login/validasi.php");
                             $row = mysqli_fetch_array($query);
                             
                             ?>
-                            <span style="width: 100%">Status Proses : <?php echo $row['jumlah']; ?></span>
+                            <span style="width: 100%"><i class="fas fa-tasks    "></i>  Need Confirmation : <?php echo $row['jumlah']; ?></span>
                         </div>
                         <div class="progress-bar blue stripes" style="background-color: #f4511e;">
                             <?php
@@ -128,7 +130,7 @@ require("../login/validasi.php");
                             $query = mysqli_query($db, $sql);
                             $row = mysqli_fetch_array($query);
                             ?>
-                            <span style="width: 100%">Status Pending : <?php echo $row['jumlah']; ?></span>
+                            <span style="width: 100%"><i class="fas fa-exclamation-circle    "></i> Status Pending : <?php echo $row['jumlah']; ?></span>
                         </div>
 
                 </td>

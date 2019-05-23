@@ -80,31 +80,9 @@ require("../login/validasi.php");
 					Contact Us
 				</span>
 
-				<label class="label-input100" for="first-name">Nama *</label>
-				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
-					<input id="first-name" class="input100" type="text" name="first-name" placeholder="First name">
-					<span class="focus-input100"></span>
-				</div>
-				<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type last name">
-					<input class="input100" type="text" name="last-name" placeholder="Last name">
-					<span class="focus-input100"></span>
-				</div>
-
-				<label class="label-input100" for="email">Email *</label>
-				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-					<input id="email" class="input100" type="text" name="email" placeholder="example@email.com">
-					<span class="focus-input100"></span>
-				</div>
-
-				<label class="label-input100" for="phone">Nomor Telepon</label>
-				<div class="wrap-input100">
-					<input id="phone" class="input100" type="text" name="phone" placeholder="+62 XX-XXXX-XXXX">
-					<span class="focus-input100"></span>
-				</div>
-
 				<label class="label-input100" for="message">Pesan *</label>
-				<div class="wrap-input100 validate-input" data-validate = "Message is required">
-					<textarea id="message" class="input100" name="message" placeholder="Tulis pesan anda disini"></textarea>
+				<div class="wrap-input100 validate-input"  data-validate = "Message is required">
+					<textarea id="message" class="input100" minlength="10" name="message" placeholder="Tulis pesan anda disini"></textarea>
 					<span class="focus-input100"></span>
 				</div>
 
@@ -166,6 +144,45 @@ require("../login/validasi.php");
 			</div>
 		</div>
 	</div>
+	  <div>
+	  <table class="box-view"> 
+		                    <?php
+												
+												require_once "../config/koneksi.php";
+												$id = $_SESSION['id'];
+                        $query = "SELECT * FROM contactus where id_user=$id";
+                        
+                        if($sql = mysqli_query($db, $query)){
+                        while ($r = mysqli_fetch_array($sql)) {
+												?>
+                        
+                         <tr>
+                            <th>Nama</th>
+                            <th>no.Telp</th>
+                            <th>email</th>
+                            <th>pesan</th>
+                        </tr>
+                        <tr>
+												    <?php
+														$st=mysqli_query($db, "SELECT username from user where id=$r[1]");
+                                $nmst = mysqli_fetch_array($st);
+                                echo "<td>" . $nmst['username'] . "</td>";
+														?>
+														<td><?php echo $r[2]; ?></td>
+														<td><?php echo $r[3]; ?></td>
+														<td><?php echo $r[4]; ?></td>
+                        </tr>
+												<?php }
+												
+                      
+                }else{
+                    echo "
+                     <p style='font-size:90px; text-align:center;'><i class='fas fa-exclamation-triangle    '></i></p> <br>
+                     <p style='font-size:30px; text-align:center;'> <b>Trains Not Available</b><br>
+                     There are no trains matching your search criteria. Please modify your search.</p>";
+                }?>
+                </table>
+		</div>
 	  <div id="map"></div>
         <!-- Footer
 ================================================== -->
@@ -225,7 +242,7 @@ require("../login/validasi.php");
         });
 
         // mebuat konten untuk info window
-        var contentString = '<h2>Ini kantor kita</h2>';
+        var contentString = '<h2>Kantor lets_go<br>Jl. Simbar Menjangan, Kel. Jatimulyo no. 35<br>RW. 03, Kec. LowokWaru, Kota Malang </h2>';
 
         // membuat objek info window
         var infowindow = new google.maps.InfoWindow({

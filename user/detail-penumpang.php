@@ -26,7 +26,8 @@
                 <a href="../login/index.php">Log out</a>
             </div>
         </div>
-        <center><h3>Riwayat Pembelian Tiket Kereta Api</h3></center>
+        <a href="./riwayat-transaksi.php"><button style="margin:10px; font-size:20px; padding:5px;">back</button></a>
+        <center><h3>Detail pembelian</h3></center>
         <div class="cart" style="margin-top:50px;">
             <table class="kotak-cart">
                 <thead>
@@ -99,18 +100,6 @@
             <!-- <a href="print-tiket.php?idTrans=<?php echo $trans?>" target="_BLANK">TES PRINT</a> -->
             <a href="print_pdf.php">Print TO PDF</a>
         </div>
-        <div class="action">
-            <h2>Give it a try before you commit.</h2>
-            <p>You will get various attractive promos from our website. Just give us your email address, and
-                we'll send you the details:</p>
-            <form action="./validasi-email.php" method="POST">
-                <center><input type="email" name="email" placeholder="Enter your email address" required="required" />
-                    <button type="submit" name="email-home">Sign Up Now! <i class="fas fa-plane    "></i></button>
-                </center>
-            </form>
-        </div>
-        <!-- Footer
-================================================== -->
         <footer>
             <nav>
                 <ul>

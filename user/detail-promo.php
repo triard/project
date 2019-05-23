@@ -52,18 +52,6 @@ $iklan = mysqli_fetch_array($query);
              <?php echo $iklan[2] ?>
         </div>
         </div>
-        <div class="action">
-            <h2>Give it a try before you commit.</h2>
-            <p>You will get various attractive promos from our website. Just give us your email address, and
-                we'll send you the details:</p>
-            <form action="./validasi-email.php" method="POST">
-                <center><input type="email" name="email" placeholder="Enter your email address" required="required" />
-                    <button type="submit" name="email-home">Sign Up Now! <i class="fas fa-plane    "></i></button>
-                </center>
-            </form>
-        </div>
-        <!-- Footer
-================================================== -->
         <footer>
             <nav>
                 <ul>

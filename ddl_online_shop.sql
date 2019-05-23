@@ -22,9 +22,33 @@ CREATE TABLE IF NOT EXISTS `cart` (
   CONSTRAINT `FK_cart_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel lets_go.cart: ~0 rows (lebih kurang)
+-- Membuang data untuk tabel lets_go.cart: ~1 rows (lebih kurang)
 /*!40000 ALTER TABLE `cart` DISABLE KEYS */;
+INSERT INTO `cart` (`id_user`, `id_jd`, `qty`) VALUES
+	(20, 62, 1);
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
+
+-- membuang struktur untuk table lets_go.contactus
+CREATE TABLE IF NOT EXISTS `contactus` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` int(11) DEFAULT NULL,
+  `no_telp` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `pesan` text,
+  `status` enum('Read','Unread') DEFAULT 'Unread',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+
+-- Membuang data untuk tabel lets_go.contactus: ~6 rows (lebih kurang)
+/*!40000 ALTER TABLE `contactus` DISABLE KEYS */;
+INSERT INTO `contactus` (`id`, `id_user`, `no_telp`, `email`, `pesan`, `status`) VALUES
+	(5, 16, '764387463', 'yuki@gmail.com', 'saya mengalami masalah dalam memesan tiket kereta api. mohon bantuannya', 'Unread'),
+	(7, 16, '764387463', 'yuki@gmail.com', 'mohon bantuanyya', 'Unread'),
+	(8, 16, '764387463', 'yuki@gmail.com', 'g', 'Unread'),
+	(9, 16, '764387463', 'yuki@gmail.com', 'rr', 'Unread'),
+	(10, 16, '764387463', 'yuki@gmail.com', 'rg', 'Unread'),
+	(11, 16, '764387463', 'yuki@gmail.com', 'grgerg', 'Unread');
+/*!40000 ALTER TABLE `contactus` ENABLE KEYS */;
 
 -- membuang struktur untuk table lets_go.detailtransaksi
 CREATE TABLE IF NOT EXISTS `detailtransaksi` (
@@ -39,13 +63,17 @@ CREATE TABLE IF NOT EXISTS `detailtransaksi` (
   CONSTRAINT `FK_detailtransaksi_jadwal` FOREIGN KEY (`id_jd`) REFERENCES `jadwal` (`id_jd`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel lets_go.detailtransaksi: ~4 rows (lebih kurang)
+-- Membuang data untuk tabel lets_go.detailtransaksi: ~8 rows (lebih kurang)
 /*!40000 ALTER TABLE `detailtransaksi` DISABLE KEYS */;
 INSERT INTO `detailtransaksi` (`id_trans`, `id_jd`, `price`, `qty`, `subtotal`) VALUES
 	(16, 53, 90000, 2, 180000),
 	(17, 73, 410000, 1, 410000),
 	(18, 63, 330000, 3, 990000),
-	(18, 62, 285000, 4, 1140000);
+	(18, 62, 285000, 4, 1140000),
+	(19, 62, 285000, 1, 285000),
+	(20, 63, 330000, 1, 330000),
+	(20, 62, 285000, 1, 285000),
+	(21, 63, 330000, 1, 330000);
 /*!40000 ALTER TABLE `detailtransaksi` ENABLE KEYS */;
 
 -- membuang struktur untuk table lets_go.headtransaksi
@@ -59,14 +87,17 @@ CREATE TABLE IF NOT EXISTS `headtransaksi` (
   PRIMARY KEY (`id_trans`),
   KEY `FK_headtransaksi_user` (`id_user`),
   CONSTRAINT `FK_headtransaksi_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel lets_go.headtransaksi: ~3 rows (lebih kurang)
+-- Membuang data untuk tabel lets_go.headtransaksi: ~6 rows (lebih kurang)
 /*!40000 ALTER TABLE `headtransaksi` DISABLE KEYS */;
 INSERT INTO `headtransaksi` (`id_trans`, `tanggal`, `id_user`, `grandtotal`, `bukti`, `status`) VALUES
 	(16, '0000-00-00 00:00:00', 21, 180000, NULL, 'Complet'),
-	(17, '2019-05-20 11:07:39', 20, 410000, '20052019145450edit.png', 'Complet'),
-	(18, '2019-05-21 11:00:32', 16, 2130000, '21052019060104delete.png', 'Complet');
+	(17, '2019-05-20 11:07:39', 20, 410000, '22052019113316stasiun.png', 'Complet'),
+	(18, '2019-05-21 11:00:32', 16, 2130000, '21052019060104delete.png', 'Complet'),
+	(19, '2019-05-21 13:52:16', 20, 285000, '22052019113316stasiun.png', 'Complet'),
+	(20, '2019-05-22 16:33:00', 20, 615000, '22052019113316stasiun.png', 'Proses'),
+	(21, '2019-05-22 16:36:26', 20, 330000, '22052019115940delete.png', 'Proses');
 /*!40000 ALTER TABLE `headtransaksi` ENABLE KEYS */;
 
 -- membuang struktur untuk table lets_go.iklan
@@ -101,9 +132,9 @@ CREATE TABLE IF NOT EXISTS `jadwal` (
   KEY `FK_jadwal_stasiun_2` (`tujuan`),
   CONSTRAINT `FK_jadwal_stasiun` FOREIGN KEY (`asal`) REFERENCES `stasiun` (`id_st`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_jadwal_stasiun_2` FOREIGN KEY (`tujuan`) REFERENCES `stasiun` (`id_st`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel lets_go.jadwal: ~53 rows (lebih kurang)
+-- Membuang data untuk tabel lets_go.jadwal: ~54 rows (lebih kurang)
 /*!40000 ALTER TABLE `jadwal` DISABLE KEYS */;
 INSERT INTO `jadwal` (`id_jd`, `nama_kr`, `asal`, `tujuan`, `tgl_berangkat`, `tgl_tiba`, `kelas`, `harga`, `kursi`) VALUES
 	(53, 'Argo Parahyangan', 11, 12, '2019-05-30 05:05:00', '2019-05-30 08:39:00', 'ekonomi', 90000, 248),
@@ -115,8 +146,8 @@ INSERT INTO `jadwal` (`id_jd`, `nama_kr`, `asal`, `tujuan`, `tgl_berangkat`, `tg
 	(59, 'Sembari', 11, 14, '2019-05-28 19:15:00', '2019-05-29 05:43:00', 'eksekutif', 485000, 250),
 	(60, 'Bima', 11, 15, '2019-05-27 16:30:00', '2019-05-28 08:15:00', 'eksekutif', 500000, 250),
 	(61, 'Gajayana', 11, 15, '2019-05-29 17:00:00', '2019-05-30 09:01:27', 'eksekutif', 535000, 250),
-	(62, 'Argo Sindoro', 11, 16, '2019-05-26 16:00:49', '2019-05-26 22:01:52', 'eksekutif', 285000, 246),
-	(63, 'Bangunkarta', 11, 16, '2019-05-26 15:00:12', '2019-05-26 21:02:34', 'eksekutif', 330000, 247),
+	(62, 'Argo Sindoro', 11, 16, '2019-05-26 16:00:49', '2019-05-26 22:01:52', 'eksekutif', 285000, 244),
+	(63, 'Bangunkarta', 11, 16, '2019-05-26 15:00:12', '2019-05-26 21:02:34', 'eksekutif', 330000, 245),
 	(64, 'Argo Parahyangan', 12, 11, '2019-05-28 05:06:54', '2019-05-28 08:07:16', 'ekonomi', 80000, 250),
 	(65, 'Argo Parahyangan', 12, 11, '2019-05-28 16:08:56', '2019-05-28 19:27:07', 'eksekutif', 135000, 250),
 	(66, 'Mutiara Selatan', 12, 13, '2019-05-28 15:45:10', '2019-05-29 00:00:41', 'bisnis', 140000, 250),
@@ -158,7 +189,8 @@ INSERT INTO `jadwal` (`id_jd`, `nama_kr`, `asal`, `tujuan`, `tgl_berangkat`, `tg
 	(102, 'Gajayana', 15, 13, '2019-05-28 13:30:45', '2019-05-28 20:22:56', 'eksekutif', 3500000, 250),
 	(103, 'Malabar', 25, 26, '2019-05-28 16:00:06', '2019-05-29 07:34:15', 'bisnis', 185000, 250),
 	(104, 'Mutiara Selatan', 25, 26, '2019-05-28 16:30:55', '2019-05-29 08:21:07', 'bisnis', 275000, 250),
-	(106, 'Tawang Alun	', 15, 18, '2019-05-28 16:05:20', '2019-05-28 23:50:31', 'ekonomi', 62000, 250);
+	(106, 'Tawang Alun	', 15, 18, '2019-05-28 16:05:20', '2019-05-28 23:50:31', 'ekonomi', 62000, 250),
+	(107, 'Penataran', 17, 25, '2019-05-30 17:20:00', '2019-05-30 20:57:00', 'ekonomi', 12000, 250);
 /*!40000 ALTER TABLE `jadwal` ENABLE KEYS */;
 
 -- membuang struktur untuk table lets_go.penumpang
@@ -170,9 +202,9 @@ CREATE TABLE IF NOT EXISTS `penumpang` (
   PRIMARY KEY (`id`),
   KEY `FK_penumpang_headtransaksi` (`id_trans`),
   CONSTRAINT `FK_penumpang_headtransaksi` FOREIGN KEY (`id_trans`) REFERENCES `headtransaksi` (`id_trans`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel lets_go.penumpang: ~6 rows (lebih kurang)
+-- Membuang data untuk tabel lets_go.penumpang: ~9 rows (lebih kurang)
 /*!40000 ALTER TABLE `penumpang` DISABLE KEYS */;
 INSERT INTO `penumpang` (`id`, `id_trans`, `nama`, `no_identitas`) VALUES
 	(38, 16, 'tri ardiansyah', '1831710143'),
@@ -180,7 +212,10 @@ INSERT INTO `penumpang` (`id`, `id_trans`, `nama`, `no_identitas`) VALUES
 	(40, 17, 'gopla yudhistira', '1831710093'),
 	(41, 18, 'yuki kato', '12012000'),
 	(42, 18, 'shephul', '11012000'),
-	(43, 18, 'salmaaa', '20022000');
+	(43, 18, 'salmaaa', '20022000'),
+	(44, 19, 'bethania', '2344536'),
+	(45, 20, 'wisnu', '72717469238472093'),
+	(46, 21, 'tri', '247748279');
 /*!40000 ALTER TABLE `penumpang` ENABLE KEYS */;
 
 -- membuang struktur untuk table lets_go.stasiun
@@ -189,7 +224,7 @@ CREATE TABLE IF NOT EXISTS `stasiun` (
   `stasiun` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_st`),
   KEY `stasiun` (`stasiun`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
 
 -- Membuang data untuk tabel lets_go.stasiun: ~16 rows (lebih kurang)
 /*!40000 ALTER TABLE `stasiun` DISABLE KEYS */;

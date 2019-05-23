@@ -41,7 +41,7 @@
             </td>
             <td class="content">
                 <br><br>
-                <h3>Stasiun</h3>
+                <h3><i class="fas fa-subway    "></i> Stasiun</h3>
                 <div>
                     <form action="../create/proses_registrasi.php" method="post">
                         <div class="kotak" style="height:200px; float:right; width:300px; margin-right:50px; margin-top:30px;">
