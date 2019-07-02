@@ -105,12 +105,12 @@
                     <p>results</p><br>
                     <h2><?php 
                     $asal = $_POST["asal"];
-                    $query ="SELECT stasiun from stasiun where id_st=$asal";
+                    $query ="SELECT stasiun from stasiun where id_st=$a sal";
                               $result=mysqli_query($db,$query); 
                               $rows=mysqli_fetch_array($result);
                     echo $rows["stasiun"];?> ke 
                     <?php $tujuan = $_POST["tujuan"];
-                    $query ="SELECT stasiun from stasiun where id_st=$tujuan";
+                    $query ="SELECT stasiun from stasiun where id_st=$ tujuan";
                               $result=mysqli_query($db,$query); 
                               $rows=mysqli_fetch_array($result);
                     echo $rows["stasiun"];?></h2>

@@ -96,10 +96,6 @@
                 ?>
             </table>
         </div>
-        <div>
-            <!-- <a href="print-tiket.php?idTrans=<?php echo $trans?>" target="_BLANK">TES PRINT</a> -->
-            <a href="print_pdf.php">Print TO PDF</a>
-        </div>
         <footer>
             <nav>
                 <ul>

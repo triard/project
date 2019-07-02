@@ -24,7 +24,17 @@ require("../login/validasi.php");
         </div>
         <table class="container">
             <tr>
+                
                 <td colspan="2" class="menu">
+                    <div style="color:white; text-align:center;">
+                    <i class="fas fa-users-cog    "></i> <br>
+                    <?php
+                    
+                    echo $_SESSION['username'].
+                    "<br> Sebagai Admin";
+                    ?>
+                    <hr>
+                    </div>
                     <a href="./index.php">
                         <div><i class="fas fa-columns    "></i> Dashboard</div>
                     </a>
@@ -42,6 +52,25 @@ require("../login/validasi.php");
                     </a>
                     <a href="./Cart/cart.php">
                         <div><i class="fas fa-cart-arrow-down    "></i> Cart</div>
+                    </a>
+                    <a href="./pesan/index.php">
+                    <div style="font-size:15px; padding:10px;">
+                    <h3><i style="color:yellow; font-size:30px;" class="fas fa-bell    "></i> Incoming<br>&nbsp;&nbsp;&nbsp;&nbsp;Messages<br></h3>
+                    <?php
+                    require "../config/koneksi.php";
+                    $x = "SELECT  count(status) as jumlah FROM contactus where status='Unread'";
+                    $xy = mysqli_query($db, $x);
+                    $xyz = mysqli_fetch_array($xy);
+                    ?>
+                    Unread : <?php echo $xyz['jumlah']; ?></span>
+                    <?php
+                    $hakam = "SELECT  count(status) as jumlah FROM contactus where status='Read'";
+                    $kam = mysqli_query($db, $hakam);
+                    $sis = mysqli_fetch_array($kam);
+                    ?>
+                    <br>Read&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $sis['jumlah']; ?></span>
+
+                    </div>
                     </a>
                 </td>
 
@@ -113,7 +142,7 @@ require("../login/validasi.php");
                             $query = mysqli_query($db, $sql);
                             $row = mysqli_fetch_array($query);
                             ?>
-                            <span style="width: 100%"><i class="fas fa-check-square    "></i> Status Complet : <?php echo $row['jumlah']; ?></span>
+                            <span style="width: 100%"><i class="fas fa-check-square    "></i> Status Complete : <?php echo $row['jumlah']; ?></span>
                         </div>
                         <div class="progress-bar blue stripes" style="background-color: #ffd54f;">
                             <?php
